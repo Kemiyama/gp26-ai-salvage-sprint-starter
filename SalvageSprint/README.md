@@ -29,7 +29,7 @@ Before searching for answers, write short predictions at the top of EVIDENCE.md,
 
 Check that Unity Hub can open **Unity 6.3 LTS**. Our teaching baseline is **6000.3.26f1**. If your school computer already has a newer released 6000.3.x patch, keep it for now and record the exact version. Do not upgrade during class merely to chase the newest patch. Installation time is separate from the short prediction exercise. Tell the teacher if setup is blocked; no coding is required on Monday.
 
-## Stage 0 - Play and establish a baseline
+## Stage 0 - Play and establish a baseline - DONE
 
 **Purpose:** learn the game and establish a working checkpoint before changing AI.
 
@@ -48,11 +48,17 @@ Check that Unity Hub can open **Unity 6.3 LTS**. Our teaching baseline is **6000
 **Support:** work through this with the teacher. The supplied motor is a worked example; you do not need to write an engine navigation framework.
 
 1. Locate `Yard Geometry` and its NavMeshSurface, then the rival's NavMeshAgent. Explain which component describes walkable space and which executes movement. Inspect baked clearance separately from the runtime avoidance radius.
+
 2. Locate `Runtime/Navigator.cs`. Trace one request from `RivalBrain` to `SetDestination`, then back through `Poll` and `Core/NavigationFeedback.Classify`.
+
 3. Predict the result of four snapshots: pending with unknown remaining distance; a partial route near its endpoint; a complete route still four units away; and a complete route within stopping distance. Discuss before running the supplied tests.
+
 4. Watch the debug panel's task, target, travel status, decision count and destination-request count. Explain why decisions can increase without requesting a new route each time.
+
 5. In the stopped normal scene, move one existing shelf slightly, rebake the NavMesh using the NavMeshSurface Inspector, and predict the changed route. Run and observe. Restore the original shelf and rebake before saving the baseline. Keep all work in this project.
+
 6. Try a rival stopping distance of **1.6** temporarily. The collection radius is **1.1**. Predict how the rival could report arrival while failing to collect. Restore the supplied **0.6** stopping distance afterwards. Do not change scoring rules to hide the mismatch.
+
 7. Change the policy `Label` to identify your version. Add one truthful decision reason of your own and trace where it appears. Record one observation-to-action trace in EVIDENCE.md.
 
 **Done:** you can distinguish a requested route, a pending route, a usable route and a completed game action. The supplied navigation feedback and game rules still work. No policy tests need to turn green during Stage 1.
