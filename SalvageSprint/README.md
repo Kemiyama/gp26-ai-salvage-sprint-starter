@@ -49,6 +49,10 @@ Check that Unity Hub can open **Unity 6.3 LTS**. Our teaching baseline is **6000
 
 1. Locate `Yard Geometry` and its NavMeshSurface, then the rival's NavMeshAgent. Explain which component describes walkable space and which executes movement. Inspect baked clearance separately from the runtime avoidance radius.
 
+Answer: The NavMeshSurface component in Yard Geometry(along with its children) dictates parameters for the rival ai, where the ai can walk. The angle it can walk upwards to, physics colliders so it wont collide with walls. 
+The geomety from the Yard children gets baked, this its read from the rivals NavMeshAgent. 
+And in the NavMeshAgent you can control, steering, obstacale avoidance and pathfinding.
+
 2. Locate `Runtime/Navigator.cs`. Trace one request from `RivalBrain` to `SetDestination`, then back through `Poll` and `Core/NavigationFeedback.Classify`.
 
 3. Predict the result of four snapshots: pending with unknown remaining distance; a partial route near its endpoint; a complete route still four units away; and a complete route within stopping distance. Discuss before running the supplied tests.
