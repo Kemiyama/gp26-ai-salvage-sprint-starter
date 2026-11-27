@@ -49,7 +49,11 @@ Check that Unity Hub can open **Unity 6.3 LTS**. Our teaching baseline is **6000
 
 1. Locate `Yard Geometry` and its NavMeshSurface, then the rival's NavMeshAgent. Explain which component describes walkable space and which executes movement. Inspect baked clearance separately from the runtime avoidance radius.
 
+<<<<<<< Updated upstream
 Answer: The NavMeshSurface component in Yard Geometry(along with its children) dictates parameters for the rival ai, where the ai can walk. The angle it can walk upwards to, physics colliders so it wont collide with walls. 
+=======
+Answer: The NavMeshSurface component in Yard Geometry(along with its children) defines parameters for the rival ai, where the ai can walk. The angle it can walk upwards to, physics colliders so it wont collide with walls. 
+>>>>>>> Stashed changes
 The geomety from the Yard children gets baked, this its read from the rivals NavMeshAgent. 
 And in the NavMeshAgent you can control, steering, obstacale avoidance and pathfinding.
 
